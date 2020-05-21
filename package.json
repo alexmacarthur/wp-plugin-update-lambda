@@ -2,7 +2,6 @@
   "name": "vercel-wp-update-lambda",
   "version": "0.0.0",
   "description": "A Lambda function for updating WP plugins.",
-  "main": "wp-update.js",
   "scripts": {
     "prettier": "prettier --write \"**/*.{md,ts}\""
   },
