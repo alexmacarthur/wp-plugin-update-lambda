@@ -1,10 +1,8 @@
-import { NowRequest, NowResponse } from '@now/node';
+import { NowRequest, NowResponse } from "@now/node";
 
 export default async (req: NowRequest, res: NowResponse) => {
   const {
-    query: {
-      plugin
-    }
+    query: { plugin },
   } = req;
 
   let pluginConfig;
@@ -15,10 +13,10 @@ export default async (req: NowRequest, res: NowResponse) => {
     console.error(e.message);
 
     return res.json({
-      success: false, 
-      message: `A "${plugin}" plugin config file couldn't be found.`
+      success: false,
+      message: `A "${plugin}" plugin config file couldn't be found.`,
     });
   }
 
   return res.json(pluginConfig.default);
-}
+};

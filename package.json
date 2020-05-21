@@ -4,11 +4,30 @@
   "description": "",
   "main": "wp-update.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ./src",
+    "prettier": "prettier --write \"**/*.{md,ts}\""
   },
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@now/node": "^1.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
+    "prettier": "^2.0.5"
   }
 }
