@@ -3,27 +3,22 @@
   "version": "0.0.0",
   "description": "A Lambda function for updating WP plugins.",
   "scripts": {
-    "prettier": "prettier --write \"**/*.{md,ts}\""
+    "prettier": "prettier --write \"**/*.{md,ts}\"",
+    "prepare": "husky install"
   },
   "author": "Alex MacArthur <alex@macarthur.me> (https://macarthur.me)",
   "license": "ISC",
   "lint-staged": {
-    "*.js": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "@now/node": "^1.5.1"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.4",
-    "prettier": "^2.0.5"
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0"
   }
 }
