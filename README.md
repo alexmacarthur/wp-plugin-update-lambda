@@ -1,4 +1,3 @@
-# wp-plugin-update 
+# wp-plugin-update
 
-A Vercel serverless function that WordPressplugins can hit in order to check for updates. 
-
+A Vercel serverless function that WordPressplugins can hit in order to check for updates.

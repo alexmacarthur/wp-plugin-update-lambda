@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-        "resolveJsonModule": true
-    },
-    "include": [
-        "api/**/*"
-    ]
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "api/**/*"
+  ]
 }
