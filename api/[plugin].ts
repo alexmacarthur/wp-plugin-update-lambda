@@ -9,17 +9,19 @@ export default (req: VercelRequest, res: VercelResponse) => {
   } = req;
 
   try {
-    const zips = readdirSync(join(process.cwd(), "plugins", plugin as string))
-      .filter((fileName) => fileName.endsWith(".zip"))
-      .map((fileName) => fileName.match(/(.+)\.zip$/)[1])
+    const versions = readdirSync(join(process.cwd(), "plugins", plugin as string))
+      .filter(directoryName => /\d\.\d\.\d/.test(directoryName))
       .sort(compareVersions)
       .reverse();
 
-    const version = zips[0];
+    const version = versions[0];
+
+    // We're assuming there is only ONE plugin file.
+    const fileToDownload = readdirSync(join(process.cwd(), `plugins`, plugin as string, version as string));
 
     return res.json({
       version,
-      package: `https://wp-plugin-update.vercel.app/plugins/${plugin}/${version}.zip`,
+      package: `https://wp-plugin-update.vercel.app/plugins/${plugin}/${version}/${fileToDownload}`,
     });
   } catch (e) {
     return res.status(404).json({
