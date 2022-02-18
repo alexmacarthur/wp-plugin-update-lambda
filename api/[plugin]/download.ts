@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { getLatestVersion } from "../utils";
+import { getLatestVersion } from "../../utils";
 
 export default (req: VercelRequest, res: VercelResponse) => {
   const {
@@ -7,12 +7,9 @@ export default (req: VercelRequest, res: VercelResponse) => {
   } = req;
 
   try {
-    const { filePath, version } = getLatestVersion(plugin as string);
+    const { filePath } = getLatestVersion(plugin as string);
 
-    return res.json({
-      version,
-      package: filePath,
-    });
+    return res.redirect(301, filePath);
   } catch (e) {
     return res.status(404).json({
       message: `Sorry, couldn't find a config file for '${plugin}'.`,

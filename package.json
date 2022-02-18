@@ -5,7 +5,7 @@
   "scripts": {
     "prettier": "prettier --write \"**/*.{md,ts}\"",
     "prepare": "husky install",
-    "start": "vercel"
+    "start": "vercel dev"
   },
   "author": "Alex MacArthur <alex@macarthur.me> (https://macarthur.me)",
   "license": "ISC",
