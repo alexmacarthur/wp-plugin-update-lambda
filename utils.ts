@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 import { join } from "path";
-import compareVersions from "compare-versions";
+import { compareVersions } from "compare-versions";
 
 interface Plugin {
   version: string;

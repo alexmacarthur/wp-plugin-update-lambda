@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "description": "A Lambda function for updating WP plugins.",
   "scripts": {
-    "prettier": "prettier --write \"**/*.{md,ts}\"",
+    "format": "prettier --write \"**/*.{md,ts}\"",
     "prepare": "husky install",
     "start": "vercel dev"
   },
   "author": "Alex MacArthur <alex@macarthur.me> (https://macarthur.me)",
   "license": "ISC",
   "lint-staged": {
-    "*.{ts,js}": "eslint --cache --fix",
     "*.{ts,js,css,md}": "prettier --write"
   },
   "dependencies": {
@@ -18,7 +17,6 @@
   },
   "devDependencies": {
     "@vercel/node": "^2.9.7",
-    "eslint": "^8.34.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
