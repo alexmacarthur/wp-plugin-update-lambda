@@ -15,7 +15,7 @@ export function getLatestVersion(plugin: string): Plugin {
   const version = versions[0];
 
   const file = readdirSync(
-    join(process.cwd(), `plugins`, plugin as string, version as string)
+    join(process.cwd(), `plugins`, plugin as string, version as string),
   ).filter((f) => /.zip$/.test(f))[0];
 
   return {
