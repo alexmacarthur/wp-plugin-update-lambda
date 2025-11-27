@@ -13,13 +13,13 @@
     "*.{ts,js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "compare-versions": "^5.0.3"
+    "compare-versions": "^6.1.1"
   },
   "devDependencies": {
-    "@vercel/node": "^2.15.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8",
-    "vercel": "^30.2.3"
+    "@vercel/node": "^5.5.12",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.6.2",
+    "vercel": "^48.11.0"
   }
 }
